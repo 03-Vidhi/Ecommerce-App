@@ -21,7 +21,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(express.static(path.join(__dirname, '../frontend/dist')))
+// app.use(express.static(path.join(__dirname, '../frontend/dist')))
 
 // routes
 app.use("/api/v1/auth", authRoute);
@@ -29,9 +29,9 @@ app.use("/api/v1/category", Categoryroute);
 app.use("/api/v1/product", Productroute);
 
 // rest api
-app.use('*', function(req,res){
-  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"))
-})
+// app.use('*', function(req,res){
+//   res.sendFile(path.join(__dirname, "../frontend/dist/index.html"))
+// })
 
 //port
 const PORT = process.env.PORT || 8080;
